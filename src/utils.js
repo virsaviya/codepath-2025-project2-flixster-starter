@@ -1,8 +1,15 @@
-export const mkPosterPath = (path) => {
-  const baseUrl = 'https://image.tmdb.org/t/p/';
-  const size = 'w200';
+const API_KEY = import.meta.env.VITE_API_KEY;
+export const GET_CONFIG = {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer ${API_KEY}`,
+    accept: 'application/json',
+  },
+};
 
-  return `${baseUrl}${size}${path}`;
+export const mkPosterPath = (path, size = 200) => {
+  const baseUrl = 'https://image.tmdb.org/t/p/';
+  return `${baseUrl}w${size}${path}`;
 };
 
 export const sortMovies = (movies, sortBy) => {

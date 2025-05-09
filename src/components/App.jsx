@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 
+import Header from './Header';
+import Modal from './Modal';
 import MovieList from './MovieList';
-import Search from './Search';
+import { GET_CONFIG } from '../utils';
 import './App.css';
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const App = () => {
   const [fetching, setFetching] = useState(false);
@@ -13,23 +15,18 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [query, setQuery] = useState('');
   const [showNowPlaying, setShowNowPlaying] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [movieDetails, setMovieDetails] = useState(null);
 
   const getMovies = useCallback(
     async (page = 1, search = '') => {
       setFetching(true);
       setError(null);
-      const baseUrl = 'https://api.themoviedb.org/3/';
       const endpoint = search
-        ? `${baseUrl}search/movie?query=${search}&page=${page}`
-        : `${baseUrl}movie/now_playing?language=en-US&page=${page}`;
+        ? `${BASE_URL}search/movie?query=${search}&page=${page}`
+        : `${BASE_URL}movie/now_playing?language=en-US&page=${page}`;
       try {
-        const resp = await fetch(endpoint, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${API_KEY}`,
-            accept: 'application/json',
-          },
-        });
+        const resp = await fetch(endpoint, GET_CONFIG);
         if (!resp.ok) setError(`HTTP error: ${resp.status}`);
 
         const data = await resp.json();
@@ -47,6 +44,21 @@ const App = () => {
     [showNowPlaying],
   );
 
+  const getMovieDetails = async (id) => {
+    setError(null);
+    try {
+      const endpoint = `${BASE_URL}movie/${id}?language=en-US`;
+      const resp = await fetch(endpoint, GET_CONFIG);
+      if (!resp.ok) setError(`HTTP error: ${resp.status}`);
+      const data = await resp.json();
+      setMovieDetails(data);
+      console.log(data);
+    } catch (err) {
+      console.error('Error fetching movies:', err);
+      setError('Error fetching data');
+    }
+  };
+
   useEffect(() => {
     setNextPage(1);
     setMovies([]);
@@ -58,25 +70,55 @@ const App = () => {
     if (showNowPlaying) getMovies();
   }, [showNowPlaying, getMovies]);
 
+  useEffect(() => {
+    document.addEventListener('keydown', handleCloseModal);
+    return () => {
+      document.removeEventListener('keydown', handleCloseModal);
+    };
+  }, []);
+
   const handleLoadMore = (e) => {
     e.preventDefault();
     getMovies(nextPage, query);
   };
 
-  const handleNowPlaying = (e) => {
-    console.log('handling now playing');
-    setMovies([]);
-    setShowNowPlaying(true);
+  const handleNowPlaying = () => {
+    if (!showNowPlaying) {
+      setMovies([]);
+      setShowNowPlaying(true);
+    }
+  };
+
+  const handleCardClick = (id) => {
+    setShowModal(true);
+    getMovieDetails(id);
+  };
+
+  const handleCloseModal = (e) => {
+    const isCloseButton = e.target.closest('.close');
+    const isOutsideClick = e?.target.dataset.modalContainer === 'true';
+    const isEscKey = e?.key === 'Escape';
+    if (isOutsideClick || isCloseButton || isEscKey) {
+      setShowModal(false);
+      setMovieDetails(null);
+    }
   };
 
   return (
-    <div className='App'>
-      <header>Flixter</header>
-      <Search handleSearch={(e) => setQuery(e.target.value)} />
-      <button onClick={handleNowPlaying}>Now Playing</button>
-      <div>Sort coming soon</div>
+    <div className='app'>
+      {showModal && (
+        <Modal movie={movieDetails} closeModal={handleCloseModal} />
+      )}
+      <Header
+        handleSearch={(e) => setQuery(e.target.value)}
+        handleNowPlaying={handleNowPlaying}
+      />
       {error && <div>{error}</div>}
-      {fetching ? <div>loading...</div> : <MovieList movies={movies} />}
+      {fetching ? (
+        <div>loading...</div>
+      ) : (
+        <MovieList movies={movies} handleCardClick={handleCardClick} />
+      )}
       <button disabled={nextPage === null} onClick={handleLoadMore}>
         {nextPage ? 'more' : 'no more left'}
       </button>
