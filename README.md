@@ -22,17 +22,17 @@ Submitted by: Virsaviya Efraim Estimated time spent: **#** hours spent in total
         the list, which automatically updates page with new movies (no reloading
         by clicking the browser's refresh button).
 - [ ] **Search Functionality**
-  - [ ] Users can use a search bar to search for movies by title.
-  - [ ] The search bar should include:
-    - [ ] Text input field
-    - [ ] Submit/Search button
-    - [ ] Clear button
-  - [ ] Movies with a title containing the search query in the text input field
+  - [x] Users can use a search bar to search for movies by title.
+  - [x] The search bar should include:
+    - [x] Text input field
+    - [x] Submit/Search button
+    - [x] Clear button
+  - [x] Movies with a title containing the search query in the text input field
         are displayed in a grid view when the user either:
-    - [ ] Presses the Enter key
-    - [ ] Clicks the Submit/Search button
-  - [ ] Users can click the Clear button. When clicked:
-    - [ ] Most recent search results are cleared from the text input field and
+    - [ ] Presses the Enter key // @TODO
+    - [x] Clicks the Submit/Search button
+  - [x] Users can click the Clear button. When clicked:
+    - [x] Most recent search results are cleared from the text input field and
           the grid view and all current movies are displayed in a grid view
 - [ ] **Design Features**
   - [ ] Website implements all of the following accessibility features:

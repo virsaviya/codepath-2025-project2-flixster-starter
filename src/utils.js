@@ -4,3 +4,9 @@ export const mkPosterPath = (path) => {
 
   return `${baseUrl}${size}${path}`;
 };
+
+export const sortMovies = (movies, sortBy) => {
+  return movies.filter(
+    (movie, idx, self) => idx === self.findIndex((m) => m.id === movie.id),
+  );
+};
