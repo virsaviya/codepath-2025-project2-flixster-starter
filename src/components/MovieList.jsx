@@ -5,9 +5,9 @@ import './MovieList.css';
 
 const MovieList = ({ movies }) => {
   return (
-    <div>
-      {movies?.map((m) => (
-        <MovieCard movie={m} />
+    <div className='movie-list'>
+      {movies.map((m) => (
+        <MovieCard key={`movie-${m.id}`} movie={m} />
       ))}
     </div>
   );
