@@ -57,11 +57,11 @@ Submitted by: Virsaviya Efraim Estimated time spent: **#** hours spent in total
       - [x] Genres
       - [x] An overview
   - [ ] Users can use a drop-down menu to sort movies.
-    - [ ] Drop-down allows movies to be sorted by:
-      - [ ] Title (alphabetic, A-Z)
-      - [ ] Release date (chronologically, most recent to oldest)
-      - [ ] Rating (descending, highest to lowest)
-    - [ ] When a sort option is clicked, movies display in a grid according to
+    - [x] Drop-down allows movies to be sorted by:
+      - [x] Title (alphabetic, A-Z)
+      - [x] Release date (chronologically, most recent to oldest)
+      - [x] Rating (descending, highest to lowest)
+    - [x] When a sort option is clicked, movies display in a grid according to
           selected criterion.
   - [ ] Website displays:
     - [ ] Header section

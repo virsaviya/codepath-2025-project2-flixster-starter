@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Header from './Header';
 import Modal from './Modal';
 import MovieList from './MovieList';
-import { GET_CONFIG } from '../utils';
+import { GET_CONFIG, sortMovies } from '../utils';
 import './App.css';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
@@ -104,6 +104,10 @@ const App = () => {
     }
   };
 
+  const handleSort = (sortBy) => {
+    setMovies(sortMovies(movies, sortBy));
+  };
+
   return (
     <div className='app'>
       {showModal && (
@@ -112,6 +116,7 @@ const App = () => {
       <Header
         handleSearch={(e) => setQuery(e.target.value)}
         handleNowPlaying={handleNowPlaying}
+        handleSort={handleSort}
       />
       {error && <div>{error}</div>}
       {fetching ? (
