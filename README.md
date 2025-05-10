@@ -138,7 +138,7 @@ INSTRUCTIONS** checkboxes listed above to ensure graders see the full
 functionality of your website! (🚫 Remove this paragraph after adding
 walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+[Loom vid](https://www.loom.com/share/d1527b1ebd944fbfb0b21ce8e8396106)
 
 ### Reflection
 
@@ -146,25 +146,26 @@ walkthrough video)
   Be specific, which features in your weekly assignment did you feel unprepared
   to complete?
 
-Add your response here
+N/A
 
 - If you had more time, what would you have done differently? Would you have
   added additional features? Changed the way your project responded to a
   particular event, etc.
 
-Add your response here
+N/A
 
 - Reflect on your project demo, what went well? Were there things that maybe
   didn't go as planned? Did you notice something that your peer did that you
   would like to try next time?
 
-Add your response here
+N/A
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- [Google Fonts](https://fonts.googleapis.com/css2)
+- [Normalize.CSS](https://cdn.jsdelivr.net/npm/normalize.css)
+- [Font Awesome](https://cdnjs.cloudflare.com/ajax/libs/font-awesome)
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during
-your project. This can be a fellow peer, instructor, TA, mentor, etc.
+N/A
