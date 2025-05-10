@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
+import Footer from './Footer';
 import Header from './Header';
 import Modal from './Modal';
 import MovieList from './MovieList';
@@ -77,6 +78,17 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showModal]);
+
   const handleLoadMore = (e) => {
     e.preventDefault();
     getMovies(nextPage, query);
@@ -110,23 +122,26 @@ const App = () => {
 
   return (
     <div className='app'>
-      {showModal && (
-        <Modal movie={movieDetails} closeModal={handleCloseModal} />
-      )}
       <Header
         handleSearch={(e) => setQuery(e.target.value)}
         handleNowPlaying={handleNowPlaying}
         handleSort={handleSort}
       />
-      {error && <div>{error}</div>}
-      {fetching ? (
-        <div>loading...</div>
-      ) : (
-        <MovieList movies={movies} handleCardClick={handleCardClick} />
-      )}
-      <button disabled={nextPage === null} onClick={handleLoadMore}>
-        {nextPage ? 'more' : 'no more left'}
-      </button>
+      <main>
+        {showModal && (
+          <Modal movie={movieDetails} closeModal={handleCloseModal} />
+        )}
+        {error && <div>{error}</div>}
+        {fetching ? (
+          <div>loading...</div>
+        ) : (
+          <MovieList movies={movies} handleCardClick={handleCardClick} />
+        )}
+        <button disabled={nextPage === null} onClick={handleLoadMore}>
+          {nextPage ? 'more' : 'no more left'}
+        </button>
+      </main>
+      <Footer />
     </div>
   );
 };

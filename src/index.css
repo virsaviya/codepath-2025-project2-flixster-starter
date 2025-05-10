@@ -1,24 +1,30 @@
-header {
-  margin-top: 16px;
-  text-align: center;
+:root {
+  --color-primary: rgb(0, 195, 133);
+  --color-primary-light: rgb(128, 218, 190);
+  --color-primary-dark: #09a875;
+  --color-dark-bg: #0f231d;
 }
 
+html,
 body {
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
 }
 
+select,
+input,
 button {
-  background-color: transparent;
-  border: none;
+  background-color: var(--color-primary);
   cursor: pointer;
-  margin: 4px 4px 0 0;
-  padding: 4px 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--color-primary-dark);
 }

@@ -1,34 +1,31 @@
 .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  color: var(--color-primary-light);
+  background-color: var(--color-dark-bg);
   padding: 24px;
+}
+
+main {
+  flex: 1;
+  padding: 0 24px;
   display: flex;
   flex-direction: column;
 }
 
-.App {
+footer {
+  padding: 12px;
+  margin-top: 24px;
   text-align: center;
+  background-color: var(--color-dark-bg);
+  color: var(--color-primary-light);
 }
 
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  color: white;
-  padding: 20px;
-}
-
-@media (max-width: 600px) {
-  .movie-card {
-    width: 100%;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .search-bar form {
-    flex-direction: column;
-  }
+footer * {
+  color: var(--color-primary-light);
 }
