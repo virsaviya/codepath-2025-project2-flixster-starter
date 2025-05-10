@@ -2,7 +2,10 @@ import { mkPosterPath } from '../utils';
 import './Modal.css';
 
 const Modal = ({ movie, closeModal }) => {
-  const genres = movie?.genres?.map((g) => g.name).join(' ');
+  const genres = movie?.genres?.map((g) => g.name).join(', ');
+  const handleMissingImg = (e) => {
+    e.target.src = 'https://place-hold.it/400x600/09a875?text=Poster is MIA';
+  };
   return (
     <div
       className='modal-container'
@@ -19,13 +22,21 @@ const Modal = ({ movie, closeModal }) => {
             <img
               alt={`poster for ${movie.title}`}
               src={mkPosterPath(movie.poster_path, 400)}
+              onError={handleMissingImg}
             />
-            <div>{movie.title}</div>
-            <div>{movie.vote_average.toFixed(1)}</div>
-            <div>{movie.runtime}</div>
-            <div>{movie.release_date}</div>
-            <p>{movie.overview}</p>
-            <div className='genres'>{genres}</div>
+            <h2>{movie.title}</h2>
+            <div className='details'>
+              <div>
+                <p>Released: {movie.release_date}</p>
+                <p>Runtime: {movie.runtime} min</p>
+                <p className='genres'>Genres: {genres}</p>
+              </div>
+              <h4>
+                {movie.vote_average.toFixed(1)}
+                <i class='fa-solid fa-star' />
+              </h4>
+            </div>
+            <h5>{movie.overview}</h5>
           </div>
         )}
       </div>

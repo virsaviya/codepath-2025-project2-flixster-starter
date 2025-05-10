@@ -7,9 +7,9 @@ const Header = ({ handleSearch, handleNowPlaying, handleSort }) => {
     <header>
       <h1>Flixter</h1>
       <div className='nav'>
-        <button onClick={handleNowPlaying}>Now Playing</button>
-        <SortDropdown handleSort={handleSort} />
         <Search handleSearch={handleSearch} />
+        <SortDropdown handleSort={handleSort} />
+        <button onClick={handleNowPlaying}>Now Playing</button>
       </div>
     </header>
   );

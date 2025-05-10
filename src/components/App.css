@@ -26,3 +26,25 @@ footer {
   background-color: var(--color-dark-bg);
   color: white;
 }
+
+h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h2,
+h3,
+h4 {
+  margin: 12px 8px;
+  text-align: center;
+}
+
+h5 {
+  margin: 0 12px 12px;
+}
+
+p {
+  font-size: 0.8rem;
+  margin: 4px 8px;
+}

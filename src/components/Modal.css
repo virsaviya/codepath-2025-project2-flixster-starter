@@ -9,19 +9,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 100px;
   z-index: 100;
-  overflow: hidden;
 }
 
 .modal {
   background-color: rgb(210, 210, 210);
   border: 1px solid black;
   border-radius: 4px;
-  min-width: 400px;
-  max-height: 80vh;
+  width: 400px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .modal .header {
@@ -35,4 +34,35 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.modal button {
+  background-color: transparent;
+  border: none;
+}
+
+.modal button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.modal .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal .details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.modal p {
+  /* text-emphasis: */
+}
+.modal h5 {
+  margin: 0;
+  font-weight: 400;
+  width: calc(100% - var(--layout-padding));
+  padding: calc(var(--layout-padding) / 2);
+  font-size: 1rem;
 }
