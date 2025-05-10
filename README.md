@@ -138,7 +138,7 @@ INSTRUCTIONS** checkboxes listed above to ensure graders see the full
 functionality of your website! (🚫 Remove this paragraph after adding
 walkthrough video)
 
-[Loom vid](https://www.loom.com/share/d1527b1ebd944fbfb0b21ce8e8396106)
+<div style="position: relative; padding-bottom: 62.42774566473989%; height: 0;"><iframe src="https://www.loom.com/embed/d1527b1ebd944fbfb0b21ce8e8396106?sid=32666610-ff23-4768-b9ea-87afa01c372e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 
