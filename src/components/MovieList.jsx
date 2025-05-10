@@ -1,5 +1,3 @@
-// import { useState, useEffect } from 'react';
-
 import MovieCard from './MovieCard';
 import { sortMovies } from '../utils';
 import './MovieList.css';

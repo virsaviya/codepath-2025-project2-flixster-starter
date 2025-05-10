@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div>
         <h5>About us</h5>
-        <a href='https://www.codepath.org/' target='_blank'>
+        <a href='https://www.codepath.org/about' target='_blank'>
           <i class='fa-solid fa-code'></i>
         </a>
       </div>

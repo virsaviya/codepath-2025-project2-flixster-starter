@@ -8,11 +8,10 @@ footer > div {
   flex-direction: column;
 }
 
-div > a {
-  color: black;
-  margin: 4px 8px;
-}
-
 h5 {
   margin: 0 12px 12px;
+}
+
+footer * {
+  color: white;
 }

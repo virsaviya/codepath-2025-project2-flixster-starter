@@ -1,8 +1,11 @@
 ## Unit Assignment: Flixster
 
-Submitted by: Virsaviya Efraim Estimated time spent: **#** hours spent in total
-// @TODO Deployed Application (**required**):
-[Flixster Deployed Site](ADD_LINK_HERE) // @TODO
+Submitted by: Virsaviya Efraim
+
+Estimated time spent: **10** hours spent in total
+
+Deployed Application (**required**):
+[Flixster Deployed Site](https://codepath-2025-project2-flixster-starter.onrender.com/)
 
 ### Application Features
 
@@ -63,22 +66,22 @@ Submitted by: Virsaviya Efraim Estimated time spent: **#** hours spent in total
       - [x] Rating (descending, highest to lowest)
     - [x] When a sort option is clicked, movies display in a grid according to
           selected criterion.
-  - [ ] Website displays:
-    - [ ] Header section
-    - [ ] Banner section
-    - [ ] Search bar
-    - [ ] Movie grid
-    - [ ] About section
-    - [ ] Contact section
-    - [ ] Footer section
+  - [x] Website displays:
+    - [x] Header section
+    - [x] Banner section
+    - [x] Search bar
+    - [x] Movie grid
+    - [x] About section
+    - [x] Contact section
+    - [x] Footer section
     - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading
           process, please use the
           [color contrast checker](https://webaim.org/resources/contrastchecker/)
           to demonstrate to the grading team that text and background colors on
           your website have appropriate contrast. The Contrast Ratio should be
           above 4.5:1 and should have a green box surrounding it.
-  - [ ] **Deployment**
-  - [ ] Website is deployed via Render.
+  - [x] **Deployment**
+  - [x] Website is deployed via Render.
   - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please
         use the deployed version of your website when creating your walkthrough.
 

@@ -1,8 +1,9 @@
 :root {
   --color-primary: rgb(0, 195, 133);
-  --color-primary-light: rgb(128, 218, 190);
+  --color-primary-light: #80dabe;
   --color-primary-dark: #09a875;
   --color-dark-bg: #0f231d;
+  --layout-padding: 24px;
 }
 
 html,
@@ -27,4 +28,13 @@ button {
 
 button:hover {
   background-color: var(--color-primary-dark);
+}
+
+a {
+  text-decoration: none;
+  margin: 4px 8px;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
 }
