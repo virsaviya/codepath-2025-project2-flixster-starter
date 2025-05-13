@@ -9,6 +9,11 @@ Deployed Application (**required**):
 
 ### Application Features
 
+### Walkthrough Video
+
+- [Part 1 on Loom](https://www.loom.com/embed/d1527b1ebd944fbfb0b21ce8e8396106?sid=32666610-ff23-4768-b9ea-87afa01c372e)
+- [Part 2 on Loom](https://www.loom.com/share/a2525e51b41a4fee93afcbf4810cd896?sid=476c6301-3087-48bc-b14d-da71d0b785c4)
+
 #### REQUIRED FEATURES
 
 - [x] **Display Movies**
@@ -126,19 +131,6 @@ Deployed Application (**required**):
         bar, and the sort movies drop-down.
   - [ ] The Favorites page displays all favorited movies in a grid view.
   - [ ] The Watched page displays all watched movies in a grid view.
-
-### Walkthrough Video
-
-`TODO://` Add the embedded URL code to your animated app walkthrough below,
-`ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and
-animates when viewing this README. Ensure your walkthrough showcases the
-presence and/or functionality of all features you implemented above (check them
-off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL
-INSTRUCTIONS** checkboxes listed above to ensure graders see the full
-functionality of your website! (🚫 Remove this paragraph after adding
-walkthrough video)
-
-<div style="position: relative; padding-bottom: 62.42774566473989%; height: 0;"><iframe src="https://www.loom.com/embed/d1527b1ebd944fbfb0b21ce8e8396106?sid=32666610-ff23-4768-b9ea-87afa01c372e" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 

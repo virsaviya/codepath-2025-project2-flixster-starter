@@ -10,7 +10,6 @@ import './App.css';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const App = () => {
-  const [fetching, setFetching] = useState(false);
   const [error, setError] = useState(null);
   const [nextPage, setNextPage] = useState(1);
   const [movies, setMovies] = useState([]);
@@ -21,7 +20,6 @@ const App = () => {
 
   const getMovies = useCallback(
     async (page = 1, search = '') => {
-      setFetching(true);
       setError(null);
       const endpoint = search
         ? `${BASE_URL}search/movie?query=${search}&page=${page}`
@@ -38,8 +36,6 @@ const App = () => {
       } catch (err) {
         console.error('Error fetching movies:', err);
         setError('Error fetching data');
-      } finally {
-        setFetching(false);
       }
     },
     [showNowPlaying],
@@ -132,9 +128,7 @@ const App = () => {
           <Modal movie={movieDetails} closeModal={handleCloseModal} />
         )}
         {error && <div>{error}</div>}
-        {fetching ? (
-          <div>loading...</div>
-        ) : (
+        {movies && (
           <MovieList movies={movies} handleCardClick={handleCardClick} />
         )}
         <button disabled={nextPage === null} onClick={handleLoadMore}>
